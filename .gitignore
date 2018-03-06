@@ -2,3 +2,13 @@
 .idea/
 out/
 build/
+node_modules/
+node/
+back/src/main/resources/static/
+back/bin
+.settings/
+.classpath
+.project
+testsResults/
+.vscode/
+bin/

@@ -1,0 +1,38 @@
+group = 'HeroCorp'
+version = '0.0.1-SNAPSHOT'
+
+
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+}
+
+
+
+//------------------------------------------------------------------------------------------------------------------------
+//    Tasks - Application
+//------------------------------------------------------------------------------------------------------------------------
+
+task bootFullApplication(type: GradleBuild) {
+    group 'application'
+    setTasks([':front:npmUpdate', ':front:clean', ':front:buildClientToSpring', ':back:bootRun'])
+}
+
+task packageFullApplication(type: GradleBuild) {
+    group 'application'
+    setTasks([':front:npmUpdate', ':front:clean', ':front:packageClientToSpring', ':back:bootJar'])
+}
+
+//------------------------------------------------------------------------------------------------------------------------
+//    Tasks - Init project
+//------------------------------------------------------------------------------------------------------------------------
+
+task wrapper(type: Wrapper) {
+    group 'init'
+    gradleVersion '4.6'
+    distributionType Wrapper.DistributionType.ALL
+}

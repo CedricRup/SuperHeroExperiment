@@ -1,0 +1,5 @@
+rootProject.name = 'HeroCorp'
+
+include 'front',
+        'back',
+		'oracle'
