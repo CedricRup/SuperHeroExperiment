@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-
+import { Observable ,  Subject, of } from 'rxjs';
+import {debounceTime, switchMap, catchError} from 'rxjs/operators';
+import {} from 'rxjs/operators';
+import {distinctUntilChanged} from 'rxjs/operators';
 import { HeroSearchService } from './hero-search.service';
 import { Hero } from './hero';
-
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'my-hero-search',
@@ -33,18 +28,20 @@ export class HeroSearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroes = this.searchTerms
-      .debounceTime(300)        // wait for 300ms pause in events
-      .distinctUntilChanged()   // ignore if next search term is same as previous
-      .switchMap(term => term   // switch to new observable each time
-        // return the http search observable
-        ? this.heroSearchService.search(term)
-        // or the observable of empty heroes if no search term
-        : Observable.of<Hero[]>([]))
-      .catch(error => {
-        // TODO: real error handling
-        console.log(`Error in component ... ${error}`);
-        return Observable.of<Hero[]>([]);
-      });
+      .pipe(
+        debounceTime(300), // wait for 300ms pause in events
+        distinctUntilChanged(), // ignore if next search term is same as previous
+        switchMap(term => term   // switch to new observable each time
+          // return the http search observable
+          ? this.heroSearchService.search(term)
+          // or the observable of empty heroes if no search term
+          : of<Hero[]>([])),
+        catchError(error => {
+          // TODO: real error handling
+          console.log(`Error in component ... ${error}`);
+          return of<Hero[]>([]);
+        })
+      );
   }
 
   gotoDetail(hero: Hero): void {

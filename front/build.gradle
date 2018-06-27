@@ -26,8 +26,8 @@ apply plugin: 'com.moowork.node'
 //------------------------------------------------------------------------------------------------------------------------
 
 node {
-    version = '8.5.0'
-    npmVersion = '5.4.2'
+    version = '8.9.0'
+    npmVersion = '6.1.0'
     download = true
     workDir = file("${rootDir}/front/node")
     nodeModulesDir = file("${rootDir}/front")
