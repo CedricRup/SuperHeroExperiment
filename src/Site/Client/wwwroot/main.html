@@ -1,0 +1,94 @@
+<div class="columns">
+  <aside class="column sidebar is-narrow">
+    <section class="section">
+      <nav class="menu">
+        <ul class="menu-list">
+          ${Menu}
+          <template id="MenuItem">
+            <li><a class="${Active}" href="${Url}">${Text}</a></li>
+          </template>
+        </ul>
+      </nav>
+    </section>
+  </aside>
+  <div class="column">
+      <section class="section">
+          ${Body}
+
+          <div id="notification-area">
+              <div>${Error}</div>
+          </div>
+
+          <template id="Home">
+              <div class="content">
+                  <h1 class="title">Welcome to the Super Hero Experiment!</h1>
+                  <p>Help the Super Heores, save the world! Watch out, the clock is ticking!</p>
+                  <ul>
+                      <li>
+                          The experiment slides are
+                          <a target="_blank" href="/slides.pptx">here</a>.
+                      </li>
+                      <li>
+                          You can find the service specifications
+                          <a target="_blank" href="/your-doc.md">here</a>.
+                      </li>
+                      <li>
+                          <a href="/heroDatabase">Go to the hero database</a> to find more information about your allies!
+                      </li>
+                  </ul>
+              </div>
+          </template>
+
+          <template id="HeroDatabase">
+              <h1 class="title">Search for heroes!</h1>
+              <p>
+                  <input type="text" id="request" class="input" bind="${Request}"/>
+                  <button onclick="${Search}" class="button is-link is-rounded">Search</button>
+              </p>
+              ${Result}
+          </template>
+
+          <template id="HeroResult">
+              <div class="content">
+                  <h1 class="title">
+                      ${Name}
+                  </h1>
+                  <ul>
+                      <li>
+                          <b>Status:</b> ${Status}
+                      </li>
+                      <li>
+                          <b>Alignment:</b> ${Alignment}
+                      </li>
+                      <li>
+                          <b>Sex:</b> ${Sex}
+                      </li>
+                      <li>
+                          <b>Eyes color :</b> ${Eyes}
+                      </li>
+                      <li>
+                          <b>Hair:</b> ${Hair}
+                      </li>
+                      <li>
+                          <b>First Appearance:</b> ${FirstAppearance}
+                      </li>
+                      <li>
+                          <b>Number Of Appearances:</b> ${NumberOfAppearances}
+                      </li>
+                      <li>
+                          <b>Secret:</b> ???
+                      </li>
+                  </ul>
+              </div>
+              ${ErrorNotification}
+          </template>
+
+          <template id="ErrorNotification">
+              <div class="notification is-warning">
+                  <button class="delete ${HideClass}" onclick="${Hide}"></button>
+                  ${Text}
+              </div>
+          </template>
+      </section>
+  </div>
+</div>

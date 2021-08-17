@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Client\Heroes.fs" Link="Heroes.fs" />
+    <Compile Include="HeroesCSVLoader.fs" />
+    <Compile Include="Index.fs" />
+    <Compile Include="WebApp.fs" />
+    <Compile Include="Program.fs" />
+    <Content Include="collection.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Giraffe" Version="5.0.0" />
+    <PackageReference Include="Bolero.Server" Version="0.*" />
+    <PackageReference Include="Bolero.HotReload.Server" Version="0.*" />
+    <PackageReference Include="FSharp.Data" Version="4.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\Client.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>
