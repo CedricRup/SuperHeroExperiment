@@ -19,33 +19,26 @@ The Hero Corp site is needed to run the hands-on. The participants app will be r
 
 ### Run the Hero Corp site on a local machine
 
-You'll need Java 8 runtime environment. To run the site, go at the root of the repository and launch
+You'll need .NET 5 sdk. To run the site, go at src\Site\Server and launch
 
 ```
-.\gradlew bootFullApplication
+.\dotnet run
 ```
-Default port is 8080
+Default port is 5001 (https)
 
-If you intent to use a local computer to run he game, make sure that other computers can reach it
+If you intent to use a local computer to run the game, make sure that other computers can reach it
 
 ### Host the Hero Corp site somewhere else
 
-Build the app with 
+Go to src folder and build the app with 
 
 ```
-.\gradlew packageFullApplication
+.\dotnet build -c Release
 ```
 
-The result jar is in the back/build/libs directory
+The result jar is in the src\Site\Server\bin\Release\net5.0
 
-You'll need a Java 8 enable environment to launch the app
-
-
-```
-java -jar heroCorp-0.1.0.jar
-```
-
-The app is a spring boot fat jar, see Spring Boot documentation to tweak execution.
+You'll need a .NET 5 enabled environment to launch the app
 
 See you hosting environment for more details ;o)
 

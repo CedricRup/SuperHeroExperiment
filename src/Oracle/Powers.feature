@@ -1,7 +1,7 @@
 Feature: Super Hero Powers
 
   Background:
-    Given this heroes may register
+    Given these heroes may register
       | Name               | Eye         | Alive             | Appearances | First Appearance | Hair       | Sex                | Align              | Id              | Secret                               |
       | Iceman             |             | Living Characters | 5           | Jan-11           | Blond Hair | Male Characters    | Neutral Characters | Secret Identity | b364bbc2-261c-4da6-8a15-1dda2c92c9bb |
       | Charles Blackwater |             | Living Characters | 4           | Oct-91           |            | Male Characters    | Good Characters    | Secret Identity | a92b57f0-e6eb-43c6-ac53-2efcbec811e8 |

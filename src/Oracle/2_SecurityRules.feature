@@ -2,7 +2,7 @@ Feature: Security Rules
 
   Background:
 
-    Given this heroes may register
+    Given these heroes may register
       | Name            | Secret                               | Align              | Alive               |
       | Spider-man      | 7effb551-5364-48cb-9014-a36fd7068619 | Good Characters    | Living Characters   |
       | Gorilla Grodd   | 983cc61a-5efb-4733-ac63-3956c296a99f | Bad Characters     | Living Characters   |

@@ -1,7 +1,7 @@
 Feature: Bonus Rules
 
   Background:
-    Given this heroes may register
+    Given these heroes may register
       | Name             | Eye        | Alive             | Appearances | First Appearance | Hair       | Sex                | Align              | Id              | Secret                               |
       | Aquaria Neptunia | Blue Eyes  | Living Characters | 139         | May-47           | Blond Hair | Female Characters  | Good Characters    | Secret Identity | ccefd65a-0f7e-4a98-bffe-c6f9cc12ddd1 |
       | Tricephalous     | Red Eyes   | Living Characters | 13          | Nov-61           | No Hair    | Male Characters    |                    | Secret Identity | 9c5cd16f-2b7c-4ee8-84a5-a76db7ae8826 |
